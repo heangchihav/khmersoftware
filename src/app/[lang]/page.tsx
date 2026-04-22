@@ -1,31 +1,20 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useParams } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
-  const { t, language } = useLanguage();
-  const [isClient, setIsClient] = useState(false);
+  const params = useParams();
+  const { t, language, setLanguage } = useLanguage();
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    // Show loading state or fallback content during hydration
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <Navigation />
-        <div className="flex items-center justify-center h-96">
-          <div className="text-center">
-            <div className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // Sync URL language with context
+  React.useEffect(() => {
+    if (params.lang && (params.lang === 'en' || params.lang === 'km')) {
+      setLanguage(params.lang as 'en' | 'km');
+    }
+  }, [params.lang, setLanguage]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
