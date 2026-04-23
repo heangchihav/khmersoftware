@@ -25,6 +25,21 @@
     color: #fff;
     overflow-x: hidden;
     padding-top: 64px;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  /* Prevent horizontal scrolling on mobile */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Ensure full width layout */
+  * {
+    box-sizing: border-box;
   }
 
   main {
@@ -67,22 +82,41 @@
     font-family: 'Hanuman', 'Syne', sans-serif !important;
   }
 
-  /* Responsive adjustments */
+  /* Container class to match navigation width */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+
   @media (max-width: 1024px) {
     body {
-      padding-top: 56px;
+      padding-top: 64px;
+    }
+
+    .container {
+      padding: 0 30px;
     }
   }
 
   @media (max-width: 768px) {
     body {
-      padding-top: 52px;
+      padding-top: 64px;
+    }
+
+    .container {
+      padding: 0 20px;
     }
   }
 
   @media (max-width: 480px) {
     body {
-      padding-top: 48px;
+      padding-top: 52px;
+    }
+
+    .container {
+      padding: 0 16px;
     }
   }
 }

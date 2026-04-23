@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   description: "Leading software company in Cambodia offering software sales, rental, and custom development services. Affordable solutions for Cambodian businesses.",
   keywords: ["software Cambodia", "custom development", "software rental", "business solutions", "Phnom Penh", "Khmer software"],
   authors: [{ name: "KhmerSoftware" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
   openGraph: {
     title: "KhmerSoftware - Professional Software Solutions in Cambodia",
     description: "Leading software company in Cambodia offering software sales, rental, and custom development services.",
