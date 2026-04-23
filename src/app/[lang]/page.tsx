@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import HomePageContent from '@/components/HomePageContent';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function Home() {
+export default function LangHomePage() {
   const params = useParams();
   const { setLanguage } = useLanguage();
 
