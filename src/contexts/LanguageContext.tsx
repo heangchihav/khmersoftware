@@ -25,6 +25,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
 
     // Priority order: URL > localStorage > browser language > default
     let detectedLanguage: Language = 'en';
@@ -48,7 +52,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
 
     setLanguage(detectedLanguage);
-  }, [pathname]);
+  }, [pathname, isClient]);
 
   // Update localStorage when language changes (only on client)
   useEffect(() => {
