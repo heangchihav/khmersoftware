@@ -64,15 +64,15 @@ export default function Contact() {
       </section>
 
       {/* Contact Information */}
-      <section className="section" style={{ padding: '80px 40px' }}>
+      <section className="section" style={{ padding: '80px clamp(16px, 4vw, 40px)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))', gap: 24 }}>
             {[
               { icon: '📧', title: t('contact.email'), info: [t('contact.email1'), t('contact.email2'), t('contact.responseTime')], color: '#0ABADF' },
               { icon: '📞', title: t('contact.phone'), info: [t('contact.phone1'), t('contact.phone2'), t('contact.phoneHours')], color: '#51B41C' },
               { icon: '📍', title: t('contact.address'), info: [t('contact.addressFull')], color: '#EDEC3A' },
             ].map((item, i) => (
-              <div key={i} className="glass-card" style={{ padding: '28px', textAlign: 'center' }}>
+              <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 28px)', textAlign: 'center' }}>
                 <div style={{ fontSize: 40, marginBottom: 16 }}>{item.icon}</div>
                 <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#fff' }}>{item.title}</h3>
                 {item.info.map((info, j) => (
@@ -85,16 +85,16 @@ export default function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="section" style={{ padding: '80px 40px' }}>
+      <section className="section" style={{ padding: '80px clamp(16px, 4vw, 40px)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 60 }}>
             <div className="section-label">Send Message</div>
             <h2 className="section-title">We'd Love to <span className="grad-yellow">Hear</span> From You</h2>
             <div className="h-line" style={{ margin: '16px auto 0' }} />
           </div>
-          <div className="glass-card" style={{ padding: '40px', maxWidth: 800, margin: '0 auto' }}>
+          <div className="glass-card" style={{ padding: 'clamp(24px, 4vw, 40px)', maxWidth: 800, margin: '0 auto' }}>
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 24 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))', gap: 24 }}>
                 <div>
                   <label htmlFor="name" style={{ display: 'block', color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 8 }}>
                     {t('contact.name')}
@@ -253,14 +253,14 @@ export default function Contact() {
             <h2 className="section-title">Got <span className="grad-green">Questions?</span></h2>
             <div className="h-line" style={{ margin: '16px auto 0', background: 'linear-gradient(90deg, #51B41C, #0ABADF)' }} />
           </div>
-          <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 24 }}>
+          <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(350px, 100%), 1fr))', gap: 24 }}>
             {[
               { q: t('faq.developmentTime'), a: t('faq.developmentTimeAnswer'), icon: '⏱️' },
               { q: t('faq.training'), a: t('faq.trainingAnswer'), icon: '🎓' },
               { q: t('faq.payment'), a: t('faq.paymentAnswer'), icon: '💳' },
               { q: t('faq.khmerLanguage'), a: t('faq.khmerLanguageAnswer'), icon: '🇰🇭' },
             ].map((item, i) => (
-              <div key={i} className="glass-card" style={{ padding: '28px', position: 'relative', overflow: 'hidden' }}>
+              <div key={i} className="glass-card" style={{ padding: 'clamp(20px, 4vw, 28px)', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
                   <div style={{ fontSize: 24, marginRight: 12, background: 'rgba(81,180,28,0.15)', width: 40, height: 40, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {item.icon}

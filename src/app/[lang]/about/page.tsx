@@ -37,8 +37,8 @@ export default function About() {
       {/* Our Story */}
       <section className="section">
         <div className="container">
-          <div className="glass-card" style={{ padding: '40px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32, alignItems: 'center' }}>
+          <div className="glass-card" style={{ padding: 'clamp(20px, 4vw, 40px)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 32, alignItems: 'center' }}>
               <div>
                 <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: 28, fontWeight: 700, marginBottom: 16, color: '#fff' }}>{t('about.ourStory')}</h2>
                 <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 15, lineHeight: 1.7, marginBottom: 12 }}>
@@ -51,7 +51,7 @@ export default function About() {
                   {t('about.storyText3')}
                 </p>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(120px, 100%), 1fr))', gap: 24 }}>
                 {[
                   { val: '50+', label: t('about.projectsCompleted'), color: '#0ABADF' },
                   { val: '5+', label: t('about.yearsExperience'), color: '#51B41C' },
@@ -72,8 +72,8 @@ export default function About() {
       {/* Mission & Vision */}
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
-            <div className="glass-card" style={{ padding: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 24 }}>
+            <div className="glass-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
               <div style={{ width: 64, height: 64, background: 'linear-gradient(135deg, #0ABADF, #0E62A2)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -84,7 +84,7 @@ export default function About() {
                 {t('about.missionText')}
               </p>
             </div>
-            <div className="glass-card" style={{ padding: '32px' }}>
+            <div className="glass-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
               <div style={{ width: 64, height: 64, background: 'linear-gradient(135deg, #EDEC3A, #51B41C)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -108,7 +108,7 @@ export default function About() {
             <h2 className="section-title">What Sets Us <span className="grad-yellow">Apart</span></h2>
             <div className="h-line" style={{ margin: '16px auto 0' }} />
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))', gap: 20 }}>
             {[
               { icon: '🌍', title: t('about.localExpertise'), desc: t('about.localExpertiseText'), color: '#0ABADF' },
               { icon: '💰', title: t('about.affordablePricing'), desc: t('about.affordablePricingText'), color: '#51B41C' },
@@ -117,7 +117,7 @@ export default function About() {
               { icon: '⚡', title: t('about.fastImplementation'), desc: t('about.fastImplementationText'), color: '#0E62A2' },
               { icon: '✅', title: t('about.qualityGuaranteed'), desc: t('about.qualityGuaranteedText'), color: '#51B41C' },
             ].map((item, i) => (
-              <div key={i} className="glass-card" style={{ padding: '24px', textAlign: 'center' }}>
+              <div key={i} className="glass-card" style={{ padding: 'clamp(16px, 3vw, 24px)', textAlign: 'center' }}>
                 <div style={{ fontSize: 40, marginBottom: 12 }}>{item.icon}</div>
                 <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#fff' }}>{item.title}</h3>
                 <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontSize: 14 }}>{item.desc}</p>

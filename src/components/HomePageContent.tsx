@@ -157,15 +157,15 @@ export default function HomePageContent() {
       <div className="starfield" />
 
       {/* Orbs */}
-      <div className="orb" style={{ width: 500, height: 500, background: COLORS.blue, top: "5%", left: "-10%", animation: "pulse-glow 8s ease-in-out infinite" }} />
-      <div className="orb" style={{ width: 400, height: 400, background: COLORS.cyan, top: "20%", right: "-5%", animation: "pulse-glow 10s ease-in-out 2s infinite" }} />
-      <div className="orb" style={{ width: 300, height: 300, background: COLORS.green, bottom: "30%", left: "40%", animation: "pulse-glow 12s ease-in-out 4s infinite" }} />
+      <div className="orb" style={{ width: "min(500px, 80vw)", height: "min(500px, 80vw)", background: COLORS.blue, top: "5%", left: "0%", animation: "pulse-glow 8s ease-in-out infinite" }} />
+      <div className="orb" style={{ width: "min(400px, 70vw)", height: "min(400px, 70vw)", background: COLORS.cyan, top: "20%", right: "0%", animation: "pulse-glow 10s ease-in-out 2s infinite" }} />
+      <div className="orb" style={{ width: "min(300px, 60vw)", height: "min(300px, 60vw)", background: COLORS.green, bottom: "30%", left: "40%", animation: "pulse-glow 12s ease-in-out 4s infinite" }} />
 
       {/* ── HERO ────────────────────────────── */}
-      <section className="hero section">
+      <section className="hero section" style={{ overflowX: "hidden" }}>
         {/* Rotating ring decoration */}
-        <div style={{ position: "absolute", width: 700, height: 700, borderRadius: "50%", border: "1px solid rgba(10,186,223,0.07)", top: "50%", left: "50%", transform: "translate(-50%,-50%)", animation: "rotate-slow 60s linear infinite", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", width: 500, height: 500, borderRadius: "50%", border: "1px dashed rgba(237,236,58,0.06)", top: "50%", left: "50%", transform: "translate(-50%,-50%) rotate(30deg)", animation: "rotate-slow 40s linear reverse infinite", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", width: "min(700px, 90vw)", height: "min(700px, 90vw)", borderRadius: "50%", border: "1px solid rgba(10,186,223,0.07)", top: "50%", left: "50%", transform: "translate(-50%,-50%)", animation: "rotate-slow 60s linear infinite", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", width: "min(500px, 70vw)", height: "min(500px, 70vw)", borderRadius: "50%", border: "1px dashed rgba(237,236,58,0.06)", top: "50%", left: "50%", transform: "translate(-50%,-50%) rotate(30deg)", animation: "rotate-slow 40s linear reverse infinite", pointerEvents: "none" }} />
 
         <div className="hero-badge">
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.cyan, display: "inline-block", boxShadow: `0 0 8px ${COLORS.cyan}` }} />
@@ -192,7 +192,7 @@ export default function HomePageContent() {
         </div>
 
         {/* Floating screen mockup */}
-        <div className="float-anim" style={{ marginTop: 64, width: "100%", maxWidth: 760, position: "relative" }}>
+        <div className="float-anim" style={{ marginTop: 64, width: "100%", maxWidth: "min(760px, 95vw)", position: "relative" }}>
           <div className="glass-bright" style={{ padding: "0", overflow: "hidden" }}>
             <div style={{ background: "rgba(5,5,69,0.6)", padding: "12px 20px", display: "flex", alignItems: "center", gap: 8, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
               {["#FF6058", "#FFBD2E", "#28C840"].map((c, i) => (
@@ -202,21 +202,21 @@ export default function HomePageContent() {
                 app.khmersoftware.com
               </div>
             </div>
-            <div style={{ padding: "24px 28px", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+            <div style={{ padding: "clamp(16px, 4vw, 28px)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(120px, 100%), 1fr))", gap: 16 }}>
               {[
                 { label: "Active Users", val: "12,847", color: COLORS.cyan, up: "+18%" },
                 { label: "Revenue", val: "$94.2K", color: COLORS.green, up: "+32%" },
                 { label: "Uptime", val: "99.97%", color: COLORS.yellow, up: "Excellent" },
               ].map((m, i) => (
-                <div key={i} className="glass-card" style={{ padding: "16px 18px" }}>
+                <div key={i} className="glass-card" style={{ padding: "clamp(12px, 3vw, 18px)" }}>
                   <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", marginBottom: 8 }}>{m.label}</div>
                   <div style={{ fontFamily: "'Syne', sans-serif", fontSize: 22, fontWeight: 800, color: "#fff" }}>{m.val}</div>
                   <div style={{ fontSize: 11, color: m.color, marginTop: 4, fontWeight: 600 }}>{m.up}</div>
                 </div>
               ))}
             </div>
-            <div style={{ padding: "0 28px 24px", display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16 }}>
-              <div className="glass-card" style={{ padding: "16px 18px", height: 120, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div style={{ padding: "0 clamp(16px, 4vw, 28px) clamp(16px, 4vw, 24px)", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(140px, 100%), 1fr))", gap: 16 }}>
+              <div className="glass-card" style={{ padding: "clamp(12px, 3vw, 18px)", height: 120, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)" }}>Performance trend</div>
                 <svg width="100%" height="60" viewBox="0 0 200 60" preserveAspectRatio="none">
                   <defs>
@@ -229,7 +229,7 @@ export default function HomePageContent() {
                   <path d="M0,50 C20,45 30,20 50,25 C70,30 80,10 100,15 C120,20 130,5 160,8 C180,10 190,6 200,4 L200,60 L0,60 Z" fill="url(#lineGrad)" />
                 </svg>
               </div>
-              <div className="glass-card" style={{ padding: "16px 18px", height: 120, display: "flex", flexDirection: "column", gap: 10 }}>
+              <div className="glass-card" style={{ padding: "clamp(12px, 3vw, 18px)", height: 120, display: "flex", flexDirection: "column", gap: 10 }}>
                 <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)" }}>Services</div>
                 {[["Cloud", 80, COLORS.cyan], ["Dev", 62, COLORS.green], ["Support", 91, COLORS.yellow]].map(([l, w, c]) => (
                   <div key={String(l)}>
@@ -250,7 +250,7 @@ export default function HomePageContent() {
       </section>
 
       {/* ── STATS ───────────────────────────── */}
-      <section className="section" style={{ padding: "0 40px 80px" }}>
+      <section className="section" style={{ padding: "0 clamp(16px, 4vw, 40px) 80px" }}>
         <div className="container">
           <FadeInSection>
             <div className="stats-strip">
@@ -273,7 +273,7 @@ export default function HomePageContent() {
       </section>
 
       {/* ── SERVICES ────────────────────────── */}
-      <section className="section" style={{ padding: "80px 40px" }}>
+      <section className="section" style={{ padding: "80px clamp(16px, 4vw, 40px)" }}>
         <div className="container">
           <FadeInSection>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
@@ -283,16 +283,16 @@ export default function HomePageContent() {
             </div>
           </FadeInSection>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: 24 }}>
             {services.map((s, i) => (
               <FadeInSection key={s.key} delay={i * 80}>
-                <div className="glass-card" style={{ padding: "32px 28px", position: "relative", overflow: "hidden" }}>
+                <div className="glass-card" style={{ padding: "clamp(20px, 4vw, 32px) clamp(16px, 4vw, 28px)", position: "relative", overflow: "hidden" }}>
                   <div className="glow-top" style={{ background: `linear-gradient(90deg, transparent, ${s.color}60, transparent)` }} />
                   <div className="service-icon-wrap" style={{ background: s.bg, border: `1px solid ${s.color}30` }}>
-                    <span style={{ fontSize: 24 }}>{s.icon}</span>
+                    <span style={{ fontSize: "clamp(20px, 5vw, 24px)" }}>{s.icon}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, lineHeight: 1.7 }}>{s.desc}</p>
+                  <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: "clamp(16px, 4vw, 20px)", fontWeight: 700, marginBottom: 10 }}>{s.title}</h3>
+                  <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "clamp(13px, 3vw, 14px)", lineHeight: 1.7 }}>{s.desc}</p>
                   <a href={`/${language}/services`} className="learn-link" style={{ color: s.linkColor }}>
                     {t('home.services.learnMore')} <span>→</span>
                   </a>
@@ -304,7 +304,7 @@ export default function HomePageContent() {
       </section>
 
       {/* ── FEATURE HIGHLIGHT ───────────────── */}
-      <section className="section" style={{ padding: "80px 40px" }}>
+      <section className="section" style={{ padding: "80px clamp(16px, 4vw, 40px)" }}>
         <div className="container">
           <FadeInSection>
             <div className="feature-row">
@@ -340,8 +340,8 @@ export default function HomePageContent() {
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div className="tech-visual float-anim-slow" style={{
                   width: "100%",
-                  maxWidth: "400px",
-                  height: "300px",
+                  maxWidth: "min(400px, 100%)",
+                  height: "clamp(250px, 50vw, 300px)",
                   position: "relative"
                 }}>
                   {/* Rings */}
@@ -351,11 +351,11 @@ export default function HomePageContent() {
                   {/* Nodes */}
                   {[
                     { top: "5%", left: "50%", color: COLORS.cyan },
-                    { top: "50%", left: "95%", color: COLORS.yellow },
+                    { top: "50%", left: "90%", color: COLORS.yellow },
                     { top: "95%", left: "50%", color: COLORS.green },
-                    { top: "50%", left: "5%", color: COLORS.blue },
-                    { top: "20%", left: "80%", color: COLORS.cyan },
-                    { top: "80%", left: "20%", color: COLORS.yellow },
+                    { top: "50%", left: "10%", color: COLORS.blue },
+                    { top: "20%", left: "75%", color: COLORS.cyan },
+                    { top: "80%", left: "25%", color: COLORS.yellow },
                   ].map((n, i) => (
                     <div key={i} className="tech-node" style={{ top: n.top, left: n.left, background: n.color, boxShadow: `0 0 10px ${n.color}, 0 0 20px ${n.color}80` }} />
                   ))}
@@ -382,15 +382,15 @@ export default function HomePageContent() {
                   { title: "Agile Development", desc: "2-week sprints with live demos", icon: "⚙️", color: COLORS.green, pct: 90 },
                   { title: "Deploy & Support", desc: "Seamless go-live + 12-mo warranty", icon: "🚀", color: COLORS.blue, pct: 95 },
                 ].map((step, i) => (
-                  <div key={i} className="glass-card" style={{ padding: "18px 20px", display: "flex", alignItems: "center", gap: 16 }}>
-                    <div style={{ width: 44, height: 44, borderRadius: 12, background: `${step.color}15`, border: `1px solid ${step.color}30`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>
+                  <div key={i} className="glass-card" style={{ padding: "clamp(14px, 3vw, 20px)", display: "flex", alignItems: "center", gap: 16 }}>
+                    <div style={{ width: "clamp(36px, 5vw, 44px)", height: "clamp(36px, 5vw, 44px)", borderRadius: 12, background: `${step.color}15`, border: `1px solid ${step.color}30`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "clamp(16px, 4vw, 20px)", flexShrink: 0 }}>
                       {step.icon}
                     </div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>{step.title}</div>
-                      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>{step.desc}</div>
+                      <div style={{ fontWeight: 600, fontSize: "clamp(12px, 3vw, 14px)", marginBottom: 4 }}>{step.title}</div>
+                      <div style={{ fontSize: "clamp(11px, 3vw, 12px)", color: "rgba(255,255,255,0.5)" }}>{step.desc}</div>
                     </div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: step.color }}>{step.pct}%</div>
+                    <div style={{ fontSize: "clamp(12px, 3vw, 13px)", fontWeight: 700, color: step.color }}>{step.pct}%</div>
                   </div>
                 ))}
               </div>
@@ -427,7 +427,7 @@ export default function HomePageContent() {
       </section>
 
       {/* ── TESTIMONIALS ────────────────────── */}
-      <section className="section" style={{ padding: "80px 40px" }}>
+      <section className="section" style={{ padding: "80px clamp(16px, 4vw, 40px)" }}>
         <div className="container">
           <FadeInSection>
             <div style={{ textAlign: "center", marginBottom: 60 }}>
@@ -437,10 +437,10 @@ export default function HomePageContent() {
             </div>
           </FadeInSection>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 24 }}>
             {testimonials.map((testimonial, i) => (
               <FadeInSection key={i} delay={i * 100}>
-                <div className="glass-card testimonial-card" style={{ position: "relative", overflow: "hidden" }}>
+                <div className="glass-card testimonial-card" style={{ padding: "clamp(20px, 4vw, 28px)", position: "relative", overflow: "hidden" }}>
                   <div className="glow-top" style={{ background: `linear-gradient(90deg, transparent, ${testimonial.color}50, transparent)` }} />
                   <div className="stars">★★★★★</div>
                   <p className="quote">"{testimonial.text}"</p>
@@ -461,13 +461,13 @@ export default function HomePageContent() {
       </section>
 
       {/* ── CTA ─────────────────────────────── */}
-      <section className="section" style={{ padding: "40px 40px 100px" }}>
+      <section className="section" style={{ padding: "40px clamp(16px, 4vw, 40px) 100px" }}>
         <div className="container">
           <FadeInSection>
             <div className="cta-glass" style={{ position: "relative", overflow: "hidden" }}>
               {/* Decorative orb inside */}
-              <div style={{ position: "absolute", width: 400, height: 400, borderRadius: "50%", background: COLORS.cyan, filter: "blur(100px)", opacity: 0.08, top: "-100px", right: "-50px", pointerEvents: "none" }} />
-              <div style={{ position: "absolute", width: 300, height: 300, borderRadius: "50%", background: COLORS.yellow, filter: "blur(80px)", opacity: 0.06, bottom: "-80px", left: "10%", pointerEvents: "none" }} />
+              <div style={{ position: "absolute", width: "min(400px, 50vw)", height: "min(400px, 50vw)", borderRadius: "50%", background: COLORS.cyan, filter: "blur(100px)", opacity: 0.08, top: "-100px", right: "0%", pointerEvents: "none" }} />
+              <div style={{ position: "absolute", width: "min(300px, 40vw)", height: "min(300px, 40vw)", borderRadius: "50%", background: COLORS.yellow, filter: "blur(80px)", opacity: 0.06, bottom: "-80px", left: "10%", pointerEvents: "none" }} />
               <div style={{ position: "relative", zIndex: 2, padding: "20px" }}>
                 <div className="section-label" style={{ marginBottom: 8, fontSize: 12 }}>{t('home.cta.sectionLabel')}</div>
                 <h2 className="section-title" style={{ marginBottom: 12, fontSize: "clamp(28px, 4vw, 42px)" }}>
@@ -491,4 +491,4 @@ export default function HomePageContent() {
       </section>
     </>
   );
-}
+} 
