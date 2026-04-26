@@ -48,9 +48,9 @@ const navStyles = `
 
   /* Logo */
   .ks-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 20px;
+    font-family: 'Hanuman', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
     text-decoration: none;
     background: linear-gradient(90deg, #0ABADF, #EDEC3A);
     -webkit-background-clip: text;
@@ -61,17 +61,6 @@ const navStyles = `
     gap: 8px;
     flex-shrink: 0;
     letter-spacing: -0.3px;
-  }
-  .ks-logo-hex {
-    width: 28px;
-    height: 28px;
-    background: linear-gradient(135deg, #0ABADF, #0E62A2);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 0 16px rgba(10, 186, 223, 0.5);
   }
 
   /* Desktop links */
@@ -106,7 +95,7 @@ const navStyles = `
   }
 
   .lang-km .ks-logo {
-    font-family: 'Hanuman', 'Syne', sans-serif;
+    font-family: 'Hanuman', sans-serif;
   }
 
   .lang-km .ks-cta {
@@ -387,7 +376,7 @@ const navStyles = `
     .ks-nav-inner { padding: 0 30px; gap: 24px; }
     .ks-links { gap: 24px; }
     .ks-cta { padding: 8px 18px; font-size: 13px; }
-    .ks-logo { font-size: 18px; }
+    .ks-logo { font-size: 20px; }
     .ks-language-switcher .ks-select { 
       min-width: 90px; 
       padding: 6px 28px 6px 12px; 
@@ -404,7 +393,7 @@ const navStyles = `
     .ks-links { display: none !important; }
     .ks-cta.desktop { display: none !important; }
     .ks-hamburger { display: flex; }
-    .ks-logo { font-size: 16px; }
+    .ks-logo { font-size: 18px; }
     .ks-language-switcher .ks-select { 
       min-width: 80px; 
       padding: 6px 24px 6px 10px; 
@@ -421,11 +410,7 @@ const navStyles = `
       height: 52px;
       gap: 12px;
     }
-    .ks-logo { font-size: 14px; }
-    .ks-logo-hex { 
-      width: 24px; 
-      height: 24px; 
-    }
+    .ks-logo { font-size: 16px; }
     .ks-language-switcher .ks-select { 
       min-width: 70px; 
       padding: 5px 20px 5px 8px; 
@@ -508,7 +493,6 @@ export default function Navigation() {
 
           {/* Logo */}
           <Link href="/" className="ks-logo">
-            <div className="ks-logo-hex" />
             KhmerSoftware
           </Link>
 
